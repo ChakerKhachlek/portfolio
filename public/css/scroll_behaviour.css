@@ -1,0 +1,46 @@
+html{
+    scroll-behavior: smooth;
+}
+.primary-nav {
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    
+}
+.shrink {
+padding-top: 0 !important;
+padding-bottom: 0 !important;
+min-height: 55px !important;
+}
+
+.shrink .navbar-brand {
+height: 0 !important;
+display: none;
+
+line-height: 0 !important;
+
+}
+.shrink a {
+
+padding-top: 0 !important;
+padding-bottom: 0 !important;       
+}
+	#myBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 20px; /* Place the button at the bottom of the page */
+        right: 30px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: #766dff; /* Set a background color */
+        color: white; /* Text color */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 15px; /* Some padding */
+        border-radius: 50%; /* Rounded corners */
+        font-size: 18px; /* Increase font size */
+      }
+      
+      #myBtn:hover {
+        background-color: black; /* Add a dark-grey background on hover */
+      }
