@@ -268,7 +268,7 @@
         <!--================End Feature Area =================-->
 
         <!--================Home Gallery Area =================-->
-        <section class="home_gallery_area p_120" id="projects">
+        <section class="home_gallery_area p_120">
         	<div class="container">
         		<div class="main_title">
         			<h2>Our Latest Featured Projects</h2>
@@ -276,88 +276,70 @@
         		</div>
         		<div class="isotope_fillter">
         			<ul class="gallery_filter list">
-						<li class="active" data-filter="*"><a href="#">All</a></li>
-						<li data-filter=".brand"><a href="#">Vector</a></li>
-						<li data-filter=".manipul"><a href="#">Raster</a></li>
-						<li data-filter=".creative"><a href="#">UI/UX</a></li>
-						<li data-filter=".design"><a href="#">Printing</a></li>
+                        <li class="active" data-filter="*"><a href="#">All</a></li>
+                        @foreach($categories as $category)
+						<li data-filter=".{{$category->name}}"><a href="#">{{$category->name}}</a></li>
+                        @endforeach
 					</ul>
         		</div>
         	</div>
         	<div class="container">
         		<div class="gallery_f_inner row imageGallery1">
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand manipul design print">
+                    @foreach($categories as $category)
+        			@foreach($category->projects as $project)
+
+        			<div class="col-lg-4 col-md-4 col-sm-6 {{$project->category->name}}">
         				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="img/gallery/project-1.jpg" alt="">
-        						<a class="light" href="img/gallery/project-1.jpg"><img src="img/gallery/icon.png" alt=""></a>
-        					</div>
+        					<div class="g_img_item img-fluid">
+        						<img class="img-fluid " src="{{$project->banner_image_link}}" style="max-width:80%;" alt="">
+
+        						<a class="light"  data-toggle="modal" data-target="#portfolioModal{{$project->id}}" href="#portfolioModal{{$project->id}}"><img src="{{asset('img/gallery/icon.png')}}" alt=""></a>
+                                <div wire:ignore.self class="modal fade " id="portfolioModal{{$project->id}}" tabindex="-1" role="dialog"
+                                     aria-labelledby="portfolioModal{{$project->id}}" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header text-center">
+                                                <h1 class="modal-title w-100" style="color : black">{{$project->title}}</h1>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+
+                                            </div>
+                                            <div class="align-items-center d-flex">
+                                                <div class="modal-body pt-3 ">
+
+
+
+                                                        @foreach($project->screenshots as $screenshot)
+                                                        <div class="row justify-content-center pt-4">
+                                                        <div class="col-md-10 text-center">
+
+                                                            <img src="{{$screenshot->link}}" style="width:100%;border: 5px solid #766dff ; border-radius: 30px;" class="image-fluid" >
+
+                                                        </div>
+                                                        </div>
+                                                            @endforeach
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
         					<div class="g_item_text">
-        						<h4>3D Helmet Design</h4>
-        						<p>Client Project</p>
+        						<h4>{{$project->title}}</h4>
+        						<p>{{$project->stack}}</p>
         					</div>
         				</div>
         			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand manipul creative">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="img/gallery/project-2.jpg" alt="">
-        						<a class="light" href="img/gallery/project-2.jpg"><img src="img/gallery/icon.png" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>2D Vinyl Design</h4>
-        						<p>Client Project</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 manipul creative design print">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="img/gallery/project-3.jpg" alt="">
-        						<a class="light" href="img/gallery/project-3.jpg"><img src="img/gallery/icon.png" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>Creative Poster Design</h4>
-        						<p>Client Project</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand creative print">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="img/gallery/project-4.jpg" alt="">
-        						<a class="light" href="img/gallery/project-4.jpg"><img src="img/gallery/icon.png" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>Embosed Logo Design</h4>
-        						<p>Client Project</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand manipul design">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="img/gallery/project-5.jpg" alt="">
-        						<a class="light" href="img/gallery/project-5.jpg"><img src="img/gallery/icon.png" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>3D Disposable Bottle</h4>
-        						<p>Client Project</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand creative">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="img/gallery/project-6.jpg" alt="">
-        						<a class="light" href="img/gallery/project-6.jpg"><img src="img/gallery/icon.png" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>3D Logo Design</h4>
-        						<p>Client Project</p>
-        					</div>
-        				</div>
-        			</div>
+
+
+                        @endforeach
+                    @endforeach
         		</div>
         		<div class="more_btn">
         			<a class="main_btn" href="#">Load More Items</a>

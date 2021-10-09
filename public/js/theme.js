@@ -1,17 +1,17 @@
 ;(function($){
     "use strict"
-	
-	
-	var nav_offset_top = $('header').height() + 50; 
+
+
+	var nav_offset_top = $('header').height() + 50;
     /*-------------------------------------------------------------------------------
-	  Navbar 
+	  Navbar
 	-------------------------------------------------------------------------------*/
 
-	//* Navbar Fixed  
+	//* Navbar Fixed
     function navbarFixed(){
-        if ( $('.header_area').length ){ 
+        if ( $('.header_area').length ){
             $(window).scroll(function() {
-                var scroll = $(window).scrollTop();   
+                var scroll = $(window).scrollTop();
                 if (scroll >= nav_offset_top ) {
                     $(".header_area").addClass("navbar_fixed");
                 } else {
@@ -21,8 +21,8 @@
         };
     };
     navbarFixed();
-	
-	
+
+
 	/*----------------------------------------------------*/
     /*  Parallax Effect js
     /*----------------------------------------------------*/
@@ -30,10 +30,10 @@
     	$('.bg-parallax').parallax();
 	}
 	parallaxEffect();
-	
-	
+
+
 //	$('.courses_area').imagesLoaded(function(){
-//        $('.courses_inner').isotope({ 
+//        $('.courses_inner').isotope({
 //            layoutMode: 'masonry',
 //			percentPosition: true,
 //			masonry: {
@@ -41,25 +41,25 @@
 //			}
 //        })
 //    });
-	
-	
-	
-	
+
+
+
+
 	/*----------------------------------------------------*/
     /*  portfolio_isotope
     /*----------------------------------------------------*/
-   
+
 //	$('.courses_inner').imagesLoaded(function(){
-//        $('.courses_inner').isotope({ 
+//        $('.courses_inner').isotope({
 //            layoutMode: 'masonry',
 //            percentPosition:true,
 //            masonry: {
 //                columnWidth: 1,
-//            }            
+//            }
 //        })
 //    });
-	
-	
+
+
 	/*----------------------------------------------------*/
     /*  Clients Slider
     /*----------------------------------------------------*/
@@ -72,7 +72,7 @@
 //                nav: false,
 //                autoplay: false,
 //                smartSpeed: 1500,
-//                dots:false, 
+//                dots:false,
 //                responsiveClass: true,
 //                responsive: {
 //                    0: {
@@ -102,20 +102,12 @@
         $('#mc_embed_signup').find('form').ajaxChimp();
     }
     mailChimp();
-	
+
 	$('select').niceSelect();
-	
-	/*----------------------------------------------------*/
-    /*  Simple LightBox js
-    /*----------------------------------------------------*/
-    $('.imageGallery1 .light').simpleLightbox();
-	
-	$('.counter').counterUp({
-		delay: 10,
-		time: 1000
-	});
-	
-	
+
+
+
+
 	$(".skill_main").each(function() {
         $(this).waypoint(function() {
             var progressBar = $(".progress-bar");
@@ -128,7 +120,7 @@
 
         });
     });
-	
+
 	/*----------------------------------------------------*/
     /*  Isotope Fillter js
     /*----------------------------------------------------*/
@@ -142,9 +134,9 @@
                         duration: 750,
                         easing: 'linear'
                     }
-                }); 
+                });
             });
-			
+
             // Add isotope click function
             $(".gallery_filter li").on('click',function(){
                 $(".gallery_filter li").removeClass("active");
@@ -164,50 +156,13 @@
         }
     }
     gallery_isotope();
-	
-	/*----------------------------------------------------*/
-    /*  Testimonials Slider
-    /*----------------------------------------------------*/
-    function testimonials_slider(){
-        if ( $('.testi_slider').length ){
-            $('.testi_slider').owlCarousel({
-                loop:true,
-                margin: 30,
-                items: 3,
-                nav: false,
-                autoplay: true,
-                smartSpeed: 1500,
-                dots:true, 
-                responsiveClass: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    768: {
-                        items: 3,
-                    },
-                }
-            })
-        }
-    }
-    testimonials_slider();
-	
-	$(document).ready(function() {
-		$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-			disableOn: 700,
-			type: 'iframe',
-			mainClass: 'mfp-fade',
-			removalDelay: 160,
-			preloader: false,
 
-			fixedContentPos: false
-		});
-	}); 
-	
+
+
 	/*----------------------------------------------------*/
     /*  Google map js
     /*----------------------------------------------------*/
-     
+
     if ( $('#mapBox').length ){
         var $lat = $('#mapBox').data('lat');
         var $lon = $('#mapBox').data('lon');
@@ -414,6 +369,6 @@
             ]
         });
     }
-	
+
 
 })(jQuery)

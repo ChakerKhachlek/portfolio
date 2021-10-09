@@ -12,11 +12,5 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function index(){
-        $technologies=Technology::all();
-        return view('portfolio',
-            [
-            'technologies'=>$technologies
-        ]);
-    }
+
 }
