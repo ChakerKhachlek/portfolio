@@ -137,19 +137,20 @@
                             </a>
                         </li>
                         <li class="nav-item ">
+                            <a href="{{ route('categories-management') }}"
+                               class="nav-link {{ Route::currentRouteName() == 'categories-management' ? 'active' : '' }}">
+                                <i class="far fa-id-card mr-1"></i>
+                                <p>Categories</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
                             <a href="{{ route('projects-management') }}"
                                class="nav-link {{ Route::currentRouteName() == 'projects-management' ? 'active' : '' }}">
                                 <i class="fas fa-laptop-code mr-1"></i>
                                 <p>Projects</p>
                             </a>
                         </li>
-                        <li class="nav-item ">
-                            <a href="{{ route('services-management') }}"
-                               class="nav-link {{ Route::currentRouteName() == 'services-management' ? 'active' : '' }}">
-                                <i class="fab fa-usps mr-1"></i>
-                                <p>Services</p>
-                            </a>
-                        </li>
+
 
                         <li class="nav-item ">
                             <a href="{{ route('experiences-management') }}"

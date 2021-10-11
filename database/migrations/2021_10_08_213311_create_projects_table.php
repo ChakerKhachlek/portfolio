@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->string('title');
             $table->text('banner_image_link');
             $table->text('description');
-            $table->string('Stack',255);
+            $table->string('stack',255);
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();

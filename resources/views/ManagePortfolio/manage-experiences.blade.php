@@ -7,6 +7,7 @@
             <h4 class="text-light text-center bg-dark p-2">Experiences Management</h4>
         </div>
 
+        @livewire('manage-experiences-component')
 
 
 

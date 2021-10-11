@@ -7,7 +7,7 @@
             <h4 class="text-light text-center bg-dark p-2">Projects Management</h4>
         </div>
 
-
+        @livewire('manage-projects-component')
 
 
     </div>

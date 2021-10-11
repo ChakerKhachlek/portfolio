@@ -21,9 +21,14 @@ Route::group(['middleware' => 'auth'], function () {
         return view('dashboard');
     })->name('dashboard');
 
+
     Route::get('/manage-profile', function () {
         return view('ManagePortfolio.manage-profile');
     })->name('profile-management');
+
+    Route::get('/manage-categories', function () {
+        return view('ManagePortfolio.manage-categories');
+    })->name('categories-management');
 
     Route::get('/manage-projects', function () {
         return view('ManagePortfolio.manage-projects');
@@ -33,9 +38,6 @@ Route::group(['middleware' => 'auth'], function () {
         return view('ManagePortfolio.manage-experiences');
     })->name('experiences-management');
 
-    Route::get('/manage-services', function () {
-        return view('ManagePortfolio.manage-services');
-    })->name('services-management');
 
     Route::get('/manage-technologies', function () {
         return view('ManagePortfolio.manage-technologies');

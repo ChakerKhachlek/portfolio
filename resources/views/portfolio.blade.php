@@ -133,99 +133,50 @@
         <!--================End Welcome Area =================-->
 
         <!--================My Tabs Area =================-->
-        <section class="mytabs_area p_120" id="experiences">
-        	<div class="container">
+        <section class="mytabs_area p_120" id="experiences" >
+        	<div class="container" >
         		<div class="tabs_inner">
-					<ul class="nav nav-tabs" id="myTab" role="tablist">
-						<li class="nav-item">
-							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Experiences</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My Education</a>
-						</li>
-					</ul>
+
 					<div class="tab-content" id="myTabContent">
-						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-							<ul class="list">
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>March 2017 to present</p>
-										</div>
-										<div class="media-body">
-											<h4>Colorlib</h4>
-											<p>Senior Web Developer <br />Santa monica, Los angeles</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>March 2017 to present</p>
-										</div>
-										<div class="media-body">
-											<h4>Colorlib</h4>
-											<p>Senior Web Developer <br />Santa monica, Los angeles</p>
-										</div>
-									</div>
-								</li>
-								<li>
-								<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>March 2017 to present</p>
-										</div>
-										<div class="media-body">
-											<h4>Colorlib</h4>
-											<p>Senior Web Developer <br />Santa monica, Los angeles</p>
-										</div>
-									</div>
-								</li>
+						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" >
+							<div>
+                                <h3 class="h3 " style="color : white" >My Experiences</h3>
+                            <ul class="list">
+                                @foreach($experiences as $experience)
+                                    <li >
+                                        <span></span>
+                                        <div class="media">
+                                            <div class="d-flex">
+                                                <p class="pr-5">{{$experience->start_date}} to {{$experience->end_date}}</p>
+                                            </div>
+                                            <div class="media-body">
+                                                <h4>{{$experience->enterprise}}</h4>
+                                                <p>{{$experience->title}} <br/> {{$experience->address}}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                @endforeach
 							</ul>
+                                <h3 class="h3 " style="color : white" >My Educations</h3>
+                                <ul class="list">
+                                    @foreach($educations as $experience)
+                                        <li >
+                                            <span></span>
+                                            <div class="media">
+                                                <div class="d-flex">
+                                                    <p class="pr-5">{{$experience->start_date}} to {{$experience->end_date}}</p>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4>{{$experience->enterprise}}</h4>
+                                                    <p>{{$experience->title}} <br/> {{$experience->address}}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
 						</div>
-						<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-							<ul class="list">
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>March 2017 to present</p>
-										</div>
-										<div class="media-body">
-											<h4>Colorlib</h4>
-											<p>Senior Web Developer <br />Santa monica, Los angeles</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>March 2017 to present</p>
-										</div>
-										<div class="media-body">
-											<h4>Colorlib</h4>
-											<p>Senior Web Developer <br />Santa monica, Los angeles</p>
-										</div>
-									</div>
-								</li>
-								<li>
-								<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>March 2017 to present</p>
-										</div>
-										<div class="media-body">
-											<h4>Colorlib</h4>
-											<p>Senior Web Developer <br />Santa monica, Los angeles</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
+                    </div>
         		</div>
         	</div>
         </section>
@@ -238,25 +189,25 @@
         			<h2>Services</h2>
 
         		</div>
-        		<div class="feature_inner row ">
-        			<div class="col-lg-3 col-md-6">
+        		<div class="feature_inner row text-center">
+        			<div class="col-lg-6 col-md-6">
         				<div class="feature_item align-text-center">
         					<img src="{{asset('img\analyse.png')}}" height="80" width="80">
         					<h4 style="padding-top: 20px">Requirement Analysis</h4>
         				</div>
         			</div>
-        			<div class="col-lg-3 col-md-6">
+        			<div class="col-lg-6 col-md-6">
         				<div class="feature_item align-items-center">
 							<img src="{{asset('img\coding.png')}}" height="80" width="80">
         					<h4 style="padding-top: 20px">Implementation</h4></div>
         			</div>
-        			<div class="col-lg-3 col-md-6">
+        			<div class="col-lg-6 col-md-6">
         				<div class="feature_item">
         					<img src="{{asset('img\rocket.png')}}" height="80" width="80">
         					<h4 style="padding-top: 20px">Deployement</h4>
         				</div>
         			</div>
-					<div class="col-lg-3 col-md-6">
+					<div class="col-lg-6 col-md-6">
         				<div class="feature_item">
         					<img src="{{asset('img\web-maintenance.png')}}" height="80" width="80">
         					<h4 style="padding-top: 20px">Maintenance</h4>
@@ -289,9 +240,9 @@
         			@foreach($category->projects as $project)
 
         			<div class="col-lg-4 col-md-4 col-sm-6 {{$project->category->name}}">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item img-fluid">
-        						<img class="img-fluid " src="{{$project->banner_image_link}}" style="max-width:80%;" alt="">
+        				<div class="h_gallery_item" >
+        					<div class="g_img_item ">
+        						<img class="img-fluid image-responsive " src="{{$project->banner_image_link}}"  alt="">
 
         						<a class="light"  data-toggle="modal" data-target="#portfolioModal{{$project->id}}" href="#portfolioModal{{$project->id}}"><img src="{{asset('img/gallery/icon.png')}}" alt=""></a>
                                 <div wire:ignore.self class="modal fade " id="portfolioModal{{$project->id}}" tabindex="-1" role="dialog"
@@ -307,9 +258,10 @@
                                             </div>
                                             <div class="align-items-center d-flex">
                                                 <div class="modal-body pt-3 ">
+                                                         <h4 style="color:black">Stack  </h4><p>{{$project->stack}}</p>
+                                                        <h4 style="color:black">Description  </h4><p>{{$project->description}}</p>
 
-
-
+                                                        <h4 style="color:black">Snips  </h4>
                                                         @foreach($project->screenshots as $screenshot)
                                                         <div class="row justify-content-center pt-4">
                                                         <div class="col-md-10 text-center">
@@ -332,7 +284,7 @@
                             </div>
         					<div class="g_item_text">
         						<h4>{{$project->title}}</h4>
-        						<p>{{$project->stack}}</p>
+
         					</div>
         				</div>
         			</div>
@@ -341,7 +293,7 @@
                         @endforeach
                     @endforeach
         		</div>
-        		<div class="more_btn">
+        		<div class="more_btn d-none">
         			<a class="main_btn" href="#">Load More Items</a>
         		</div>
         	</div>
@@ -459,7 +411,14 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+            // this is not firing too
+            window.livewire.on('added', response => {
+                $('[href="#home"]').tab('show');
+            });
 
+            window.livewire.on('added', response => {
+                $('[href="#profile"]').tab('show');
+            });
 		</script>
     </body>
 </html>
