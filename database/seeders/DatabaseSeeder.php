@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
                 TechnologiesSeeder::class,
                 CategoriesSeeder::class,
                 ProjectsSeeder::class,
-                ExperiencesSeeder::class
+              
 
             ]
         );
